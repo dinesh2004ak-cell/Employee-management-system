@@ -4,7 +4,7 @@ const db = require("../db")
 const multer = require("multer")
 const path = require("path")
 
-// multer setup
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, "uploads")
@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-// ADD EMPLOYEE
+
 router.post("/add", upload.single("image"), (req, res) => {
 
     const { name, emp_id, department, designation, project, type, status } = req.body
