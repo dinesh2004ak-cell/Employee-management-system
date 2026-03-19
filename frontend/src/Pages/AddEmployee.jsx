@@ -54,12 +54,10 @@ function AddEmployee() {
     }
 
     if (editData) {
-      axios
-        .put(`http://localhost:5000/employees/update/${editData.id}`, formData)
+      axios.put(`${import.meta.env.VITE_API_URL}/employees/update/${editData.id}`,formData)
         .then(() => navigate("/"));
     } else {
-      axios
-        .post("http://localhost:5000/employees/add", formData)
+      axios.post(`${import.meta.env.VITE_API_URL}/employees/add`,formData)
         .then(() => navigate("/"));
     }
   };
@@ -108,7 +106,7 @@ function AddEmployee() {
             {image ? (
               <img src={image} alt="profile" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             ) : editData?.image ? (
-              <img src={`http://localhost:5000/uploads/${editData.image}`} alt="profile"
+              <img src={`${import.meta.env.VITE_API_URL}/uploads/${editData.image}`} alt="profile"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             ) : (
               <i className="bi bi-camera" style={{ fontSize: "26px", color: "#888" }}></i>

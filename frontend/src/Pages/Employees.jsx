@@ -10,7 +10,7 @@ function Employees() {
 
   useEffect(() => {
 
-    axios.get("http://localhost:5000/employees")
+    axios.get(`${import.meta.env.VITE_API_URL}/employees`)
       .then(res => {
         setEmployees(res.data)
       })
@@ -21,7 +21,7 @@ function Employees() {
   }, [])
   const confirmDelete = () => {
 
-    axios.delete(`http://localhost:5000/employees/delete/${deleteId}`)
+    axios.delete(`${import.meta.env.VITE_API_URL}/employees/delete/${deleteId}`)
       .then(() => {
 
         setEmployees(employees.filter(emp => emp.id !== deleteId))
@@ -141,7 +141,7 @@ function Employees() {
                       gap: "10px"
                     }}>
                       <img
-                        src={`http://localhost:5000/uploads/${emp.image}`}
+                       src={`${import.meta.env.VITE_API_URL}/uploads/${emp.image}`}
                         alt={emp.name}
                         style={{ width: "35px", height: "35px", borderRadius: "50%", objectFit: "cover" }}
                       />

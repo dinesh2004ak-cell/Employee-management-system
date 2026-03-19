@@ -31,7 +31,7 @@ function ViewEmployee() {
             }}>
 
                 <img
-                    src={`http://localhost:5000/uploads/${emp.image}`}
+                    src={`${import.meta.env.VITE_API_URL}/uploads/${emp.image}`}
                     style={{
                         width: "90px",
                         height: "90px",

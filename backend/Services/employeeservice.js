@@ -1,4 +1,4 @@
-const db = require("../db")
+const db = require("../config/db")
 
 exports.getEmployees = (callback) => {
     db.query("SELECT * FROM employees", callback)
