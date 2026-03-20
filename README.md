@@ -164,8 +164,17 @@ CREATE TABLE employees (
 * Backend and frontend are structured separately
 
 ---
+## 🎥 Demo Video
 
+This video demonstrates the core features of the application including:
 
+- Add Employee  
+- View Employee List  
+- Update Employee  
+- Delete Employee  
+- Image Upload  
+
+ [Watch Full Demo](https://www.loom.com/share/26facf4c99574e3c96630a6a8845129f)
 
  
 
